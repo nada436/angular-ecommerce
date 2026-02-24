@@ -1,0 +1,10 @@
+ <h2>Total Amount: ${{ totalAmount }}</h2>
+
+<div class="d-flex flex-wrap justify-content-between">
+  @for (product of list; track $index) {
+    <app-card
+      [product]="product"
+      (buy)="addToTotal($event)">
+    </app-card>
+  }
+</div>

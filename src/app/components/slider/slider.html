@@ -1,0 +1,13 @@
+<div class="slider-containercss" >
+  <div class="slider-wrapper" [style.transform]="getTransform()">
+    @for (slide of slides; track slide) {
+  <div class="slide">
+    <img [src]="slide">
+  </div>
+}
+  </div>
+
+  <!-- Arrows -->
+  <button class="prev" (click)="prevSlide()">&#10094;</button>
+  <button class="next" (click)="nextSlide()">&#10095;</button>
+</div>

@@ -1,0 +1,43 @@
+<div
+  class="card m-2"
+  style="width: 18rem;"
+  appCardShadow
+  shadowColor="rgba(0,0,0,0.35)"
+  [zoomScale]="1.07"
+>
+  <img
+    [src]="product.thumbnail"
+    class="card-img-top"
+    [alt]="product.title"
+  >
+
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+
+    <!-- description -->
+    <p
+      class="card-text"
+      (click)="toggleDescription()"
+      style="cursor: pointer"
+    >
+      {{ product.description | truncate:60:showFullDescription }}
+    </p>
+
+    <small
+      class="text-primary"
+      (click)="toggleDescription()"
+      style="cursor: pointer"
+    >
+      {{ showFullDescription ? 'Show less' : '' }}
+    </small>
+
+    <p class="card-text mt-2">
+      <strong>Price: </strong>\${{ product.price }}
+    </p>
+
+    <app-button 
+      [title]="'Buy'" 
+      (action)="handleBuy()">
+    </app-button>
+  </div>
+</div>
