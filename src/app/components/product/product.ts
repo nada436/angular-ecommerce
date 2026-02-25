@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { Card } from '../card/card';
 import { Iproduct } from '../../models/iproduct';
 import { FormsModule } from '@angular/forms';
+import { Home } from '../home/home';
 
 @Component({
   selector: 'app-product',
+    standalone:true,
   imports:  [Card, FormsModule],
   templateUrl: './product.html',
-  styleUrl: './product.css',
+ styleUrls: ['./product.css']
 })
 export class Product {
-list!:Iproduct[];
-totalAmount: number ;
+ @Input() searchTerm: string = '';
+@Input() sortOrder: string = 'asc';
+
+  list!: Iproduct[];
+  filteredList: Iproduct[] = [];
+  totalAmount: number;
+
 constructor(){
 this.totalAmount=0;
 this.list=[
@@ -320,6 +327,25 @@ this.list=[
 
 addToTotal(price: number) {
     this.totalAmount += price; 
+  }
+
+  ngOnChanges() {
+    this.applyFilterAndSort();
+  }
+
+ applyFilterAndSort() {
+  this.filteredList = this.list.filter(p =>
+    p.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+    p.brand.toLowerCase().includes(this.searchTerm.toLowerCase())
+  );
+  
+ 
+    this.filteredList.sort((a, b) =>
+    this.sortOrder === 'asc'
+      ? a.price - b.price   
+      : b.price - a.price   
+  );
+
   }
   
 }

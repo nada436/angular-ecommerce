@@ -1,2 +1,6 @@
+<app-header (filterChanged)="onFilterChanged($event)"></app-header>
 <app-slider></app-slider>
-<app-product></app-product>
+<app-product 
+  [searchTerm]="searchTerm"
+  [sortOrder]="sortOrder">
+</app-product>

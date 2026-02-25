@@ -40,16 +40,37 @@
           </li>
         </ul>
 
-        <!-- Search + Account + Cart -->
-        <form class="d-flex me-3">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-primary" type="submit">Search</button>
-        </form>
+        <form class="d-flex me-3 align-items-center">
+ <input
+  class="form-control me-2"
+  type="search"
+  placeholder="Search"
+  aria-label="Search"
+   name="search"    
+  [(ngModel)]="searchTerm"
+  (input)="applyFilter()"
+/>
+
+  <!-- Sort Icon -->
+  <button
+  type="button"
+  class="btn btn-outline-secondary me-2"
+  (click)="toggleSort()"
+>
+  <i
+    class="bi"
+    [ngClass]="
+      sortOrder === 'asc'
+        ? 'bi-sort-down'
+        : 'bi-sort-up'
+    "
+  ></i>
+</button>
+
+  <button class="btn btn-outline-primary" type="submit">
+    Search
+  </button>
+</form>
 
         <div class="d-flex align-items-center">
           <a href="#" class="me-3 text-decoration-none text-dark">
