@@ -1,0 +1,72 @@
+<!-- dashboard.html -->
+
+<div class="container d-flex flex-column align-items-center" style="min-height: 80vh;">
+
+  <!-- Title -->
+  <div class="container m-2 anim-1">
+    <h1 class="page-title text-center">Welcome to the <em>Dashboard</em></h1>
+    <div class="pink-divider"></div>
+  </div>
+
+  <!-- Banner -->
+  <div class="container dashboard-banner anim-2"
+       style="border-radius: 15px; padding: 20px; border: 1px solid rgb(250, 244, 244); height: 50%;">
+
+    <div class="row h-100 align-items-center px-2">
+
+      <!-- Total Products -->
+      <div class="col-md-6 mb-3 mb-md-0">
+        <div class="stat-card products">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M9 2h6l1 5H8L9 2z"/>
+              <rect x="7" y="7" width="10" height="13" rx="2"/>
+            </svg>
+          </div>
+          <div class="stat-label">Total Products</div>
+          <div class="stat-value">{{ productCount }}</div>
+          <div class="stat-sub">Items in your collection</div>
+        </div>
+      </div>
+
+      <!-- Out of Stock -->
+      <div class="col-md-6 mb-3 mb-md-0">
+        <div class="stat-card out-of-stock">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div class="stat-label">Out of Stock</div>
+          <div class="stat-value">{{ outOfStockCount }}</div>
+          <div class="stat-sub">Needs restocking</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Add Button -->
+  <div class="d-flex justify-content-end w-100 anim-3">
+    <button class="btn-add my-5" (click)="addProductFn()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5">
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+      Add Product
+    </button>
+  </div>
+
+</div>
+
+<!-- Dialog -->
+<app-form-dialog
+  [isVisible]="showadd"
+  [product]="{}"
+  header="add Product"
+  (saved)="onConfirmadd($event)"
+  (cancelled)="showadd = false">
+</app-form-dialog>

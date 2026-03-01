@@ -1,0 +1,19 @@
+.product-img {
+  max-height: 450px;
+  object-fit: cover;
+}
+
+.text-pink {
+  color: #000000;
+}
+
+.btn-pink {
+  background-color: #da4e7d;
+  color: white;
+  border: none;
+}
+
+.btn-pink:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

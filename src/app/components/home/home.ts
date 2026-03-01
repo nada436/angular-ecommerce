@@ -9,7 +9,7 @@ import { Header } from '../header/header';
 @Component({
   selector: 'app-home',
   standalone:true,
-  imports: [Slider, Product,Header],
+  imports: [Slider, Product],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

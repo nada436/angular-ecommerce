@@ -1,0 +1,75 @@
+<div class="vh-100 d-flex justify-content-center align-items-center " style="background: url('background.jpg') no-repeat center center; background-size: cover;"
+    >
+   
+  <div class="card p-4 shadow" style="max-width: 450px; width: 100%; border-radius: 15px; ">
+    <form [formGroup]="userregisterform" (ngSubmit)="saveuser()">
+         <h1 class="text-center">Login</h1>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          formControlName="name"
+          placeholder="Enter your username"
+        />
+        <div>
+            @if (userregisterform.get('name')?.invalid && userregisterform.get('name')?.touched) {
+             @if (userregisterform.get('name')?.errors?.['required']) {
+                <p class="text-danger">Username is required  </p>
+             }
+             @if (userregisterform.get('name')?.errors?.['minlength']) {
+                <p class="text-danger">Username must be at least 3 characters long</p>
+             }
+             @if (userregisterform.get('name')?.errors?.['pattern']) {
+                <p class="text-danger">Username must contain only alphanumeric characters</p>
+             }
+            }   
+        </div>
+      </div>
+
+      
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          placeholder="Enter your password"
+        />
+        <div>
+            @if (userregisterform.get('password')?.invalid && userregisterform.get('password')?.touched) {
+             @if (userregisterform.get('password')?.errors?.['required']) {
+                <p class="text-danger">Password is required  </p>
+             }
+             @if (userregisterform.get('password')?.errors?.['minlength']) {
+                <p class="text-danger">Password must be at least 6 characters long</p>
+             }
+            }   
+        </div>
+      </div>
+
+
+      <!-- Role -->
+      <div class="mb-4">
+        <label for="role" class="form-label">Role</label>
+        <select class="form-select" id="role" formControlName="role">
+          <option value="" disabled selected>Select your role</option>
+          <option value="user"> User</option>
+          <option value="admin"> Admin</option>
+        </select>
+        <div>
+            @if (userregisterform.get('role')?.invalid && userregisterform.get('role')?.touched) {
+             @if (userregisterform.get('role')?.errors?.['required']) {
+                <p class="text-danger">Role is required  </p>
+             }
+            }      
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-outline-dark w-100" [disabled]="userregisterform.invalid" >Sign In →</button>
+    </form>
+    
+  </div>
+</div>

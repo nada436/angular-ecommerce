@@ -1,0 +1,27 @@
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 2px 2px #ebd2df; 
+  border-color:#ebd2df;
+}
+select {
+  -webkit-appearance: none;  
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;    
+  border: 1px solid #ced4da; 
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+select:focus {
+  border-color: #ebd2df;
+  box-shadow: 0 0 2px 2px #ebd2df;
+  outline: none;
+}
+select option {
+  background-color: #fff; 
+  color: #333;
+}
