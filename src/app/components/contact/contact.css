@@ -1,0 +1,17 @@
+.contact-wrapper {
+  color: var(--text);
+}
+.contact-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+.form-label {
+  color: var(--text);
+}
+.alert {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}

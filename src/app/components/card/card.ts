@@ -25,6 +25,8 @@ export class Card {
   productIdToDelete!: number;
   showFullDescription = false;
   showEdit=false
+  dropdownOpen = false;
+  
   constructor(private productService: ProductService,public IsLogin: IsLogin) {}
 
   toggleDescription() {
@@ -51,6 +53,15 @@ onConfirmDelete() {
 updateProduct(product: Iproduct) {
   this.showEdit = true; 
 }
+
+toggleDropdown() { 
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  closeDropdown() { 
+    this.dropdownOpen = false;
+  }
+
 
 onConfirmUpdate(updatedData: Partial<Iproduct>) {
   const updated: Iproduct = { ...this.product, ...updatedData };

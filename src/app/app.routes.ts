@@ -9,6 +9,7 @@ import { ProductService } from './services/product-service';
 import { Iproduct } from './models/iproduct';
 import { Dashboard } from './components/dashboard/dashboard';
 import { authorizationGuard } from './juards/authorization-guard';
+import { Contact } from './components/contact/contact';
 
 const productResolver: ResolveFn<Iproduct> = (route) => {
   const service = inject(ProductService);
@@ -29,7 +30,8 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: Home, runGuardsAndResolvers: 'always', resolve: { products: homeresolver } } ,
     { path: 'product/:id', component: ProductDetails, resolve: { product: productResolver } },
-    {path: 'dashboard', component:Dashboard, canActivate: [authorizationGuard],resolve: { products: homeresolver } }
+    { path: 'dashboard', component:Dashboard, canActivate: [authorizationGuard], resolve: { products: homeresolver } },
+    { path: 'contact', component: Contact }
   ]
 },
 { path: 'login', component: Login },

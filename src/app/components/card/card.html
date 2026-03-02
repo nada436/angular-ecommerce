@@ -1,20 +1,27 @@
 <div class="card m-2 position-relative my-5" appCardShadow shadowColor="rgba(0,0,0,0.35)" [zoomScale]="1.07">
 
   <!-- Dots dropdown -->
+ @if(IsLogin.getUserRole()==='admin') {
   <div class="position-absolute" style="top: 0.5rem; left: 0.5rem; z-index: 1050;">
-   @if(IsLogin.getUserRole()==='admin') {<div class="dropdown">
-      
-      <button class="btn btn-light btn-sm border-0" type="button"
-        id="dropdownMenuButton" data-bs-toggle="dropdown"
-        aria-expanded="false" style="font-size: 1.5rem;">
+    <div class="dropdown" (clickOutside)="closeDropdown()">
+
+      <button class="btn btn-light btn-sm border-0"
+        type="button"
+        (click)="toggleDropdown()"
+        style="font-size: 1.5rem;">
         &#8942;
       </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" (click)="updateProduct(product)">Update</a></li>
-        <li><a class="dropdown-item" (click)="removeProduct(product.id)">Remove</a></li>
-      </ul>
-    </div>}
+
+      @if(dropdownOpen) {
+        <ul class="dropdown-menu show">
+          <li><a class="dropdown-item" style="cursor:pointer;" (click)="updateProduct(product)">Update</a></li>
+          <li><a class="dropdown-item" style="cursor:pointer;" (click)="removeProduct(product.id)">Remove</a></li>
+        </ul>
+      }
+
+    </div>
   </div>
+}
 
   @if(product.stock === 0) {
     <div class="out-of-stock">Out of Stock</div>

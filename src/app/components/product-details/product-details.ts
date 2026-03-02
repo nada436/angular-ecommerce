@@ -3,6 +3,7 @@ import { ProductService } from '../../services/product-service';
 import { Iproduct } from '../../models/iproduct';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule, Location } from '@angular/common';
+import { switchMap } from 'rxjs/operators';  
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-product-details',
@@ -23,10 +24,13 @@ export class ProductDetails implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.data.subscribe(({ product }) => {
-      this.product = product as Iproduct;
-    });
+    this.route.data.subscribe((data) => {
+      this.product = data['product']; 
+    }); 
   }
 
- 
+  goback() {
+    this.router.navigate(['/home']);
+
+  }
 }

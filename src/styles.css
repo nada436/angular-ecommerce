@@ -1,1 +1,102 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --surface: #ffffff;
+  --surface-2: #ffffff;
+  --border: #ffffff;
+  --muted: #6b7280;
+  --primary: #dc5c87;
+}
+
+.dark {
+  --bg:  #171a21;
+  --text: #e6e9ef;
+  --surface: #171a21;
+  --surface-2:  #171a21;
+  --border: #171a21;
+  --muted: #a4adba;
+  --primary: #f195b0;
+}
+
+html, body {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  min-height: 100%;
+}
+
+/* Themed layout blocks (leave footer to its own styling) */
+app-root, app-main, app-header,
+main, section, .container, .row, [class^="col"], [class*=" col"] {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Navbar and cards */
+.dark .navbar,
+.dark .bg-light {
+  background-color: var(--surface) !important;
+  color: var(--text) !important;
+}
+.card {
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* Forms */
+.form-control,
+.form-select,
+.input-group-text {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--text);
+}
+.form-control::placeholder { color: var(--muted); }
+.form-control:focus, .form-select:focus, textarea.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(220, 92, 135, 0.25);
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+/* Dropdowns */
+.dark .dropdown-menu {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+.dark .dropdown-item { color: var(--text); }
+.dark .dropdown-item:hover { background-color: var(--surface-2); }
+
+/* Buttons */
+.dark .btn-outline-secondary,
+.dark .btn-outline-dark {
+  color: var(--text);
+  border-color: var(--border);
+}
+.dark .btn-light {
+  background-color: var(--surface-2);
+  color: var(--text);
+  border-color: var(--border);
+}
+.dark .btn-outline-secondary:hover,
+.dark .btn-outline-dark:hover {
+  background-color: var(--surface-2);
+  border-color: var(--border);
+}
+
+/* Lists/badges */
+.dark .list-group-item {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+.dark .badge { color: var(--text); }
+
+/* Bootstrap utility overrides in dark mode */
+.dark .bg-white {
+  background-color: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+.dark .text-dark { color: var(--text) !important; }

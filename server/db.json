@@ -179,68 +179,6 @@
         "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/1.webp"
       ],
       "thumbnail": "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp"
-    },
-    {
-      "id": "66",
-      "name": "Laptop",
-      "price": 999.99
-    },
-    {
-      "id": "77",
-      "name": "Laptop1",
-      "price": 999.99
-    },
-    {
-      "id": "402",
-      "name": "Laptop2",
-      "price": 1099.99
-    },
-    {
-      "id": "1bb7"
-    },
-    {
-      "id": "11c8"
-    },
-    {
-      "id": "b9e2"
-    },
-    {
-      "id": "ef28"
-    },
-    {
-      "id": "8f0e",
-      "title": "NBV",
-      "brand": "KJNHBV",
-      "price": 55,
-      "stock": "14"
-    },
-    {
-      "id": "ec6e",
-      "title": "hhh",
-      "brand": "kjh",
-      "price": 112,
-      "stock": 12
-    },
-    {
-      "id": "7c71",
-      "title": "jjjj",
-      "brand": "hh",
-      "price": 44,
-      "stock": 15
-    },
-    {
-      "id": "5b85",
-      "title": "newwww",
-      "brand": "jjj",
-      "price": 44,
-      "stock": 0
-    },
-    {
-      "id": "9908",
-      "title": "new",
-      "brand": "jhg",
-      "price": 54,
-      "stock": 0
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

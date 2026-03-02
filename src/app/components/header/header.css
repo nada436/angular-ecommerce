@@ -1,0 +1,27 @@
+
+
+header {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.navbar .nav-link {
+  color: var(--text-dark);
+}
+
+.navbar .nav-link.active {
+  font-weight: bold;
+}
+
+.btn-outline-secondary {
+  color: var(--text-dark);
+  border-color: var(--text-dark);
+}
+
+.btn-outline-dark {
+  color: var(--text-dark);
+  border-color: var(--text-dark);
+}
+a{
+    color: var(--text-dark);
+}

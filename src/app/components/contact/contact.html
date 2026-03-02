@@ -1,0 +1,27 @@
+<div class="contact-wrapper container py-5">
+  <h2 class="mb-4">Contact Us</h2>
+
+  @if (!submitted) {
+    <form (ngSubmit)="submit()" class="contact-form">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input class="form-control" name="name" [(ngModel)]="name" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input class="form-control" name="email" type="email" [(ngModel)]="email" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Message</label>
+        <textarea class="form-control" name="message" rows="5" [(ngModel)]="message" required></textarea>
+      </div>
+      <button class="btn btn-outline-secondary" type="submit">Send</button>
+    </form>
+  } @else {
+    <div class="text-success mt-3 " role="alert">
+      Thanks, we received your message.
+    </div>
+    <a [routerLink]="['/home']" class="btn btn-outline-secondary mt-3">Back to Home</a>
+  }
+</div>
+

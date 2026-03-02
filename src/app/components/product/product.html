@@ -1,3 +1,4 @@
+<div>
 <div class="d-flex justify-content-between align-items-center mb-4 px-3 mt-5">
  @if(IsLogin.getUserRole()=='user'){ <h2 class="total-amount">
     Total: <span>${{ totalAmount }}</span>
@@ -14,4 +15,5 @@
       (deleted)="onProductDeleted($event)"> 
     </app-card>
   }
+</div>
 </div>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Iproduct } from '../models/iproduct';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, catchError, map, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 
 @Injectable({
@@ -15,8 +15,9 @@ export class ProductService {
 }
 
   
-getOneProduct(id: number | string): Observable<Iproduct> {
- return this.http.get<Iproduct>(`${environment.baseurl}/products/${id}`)
+getOneProduct(id: number): Observable<Iproduct> {
+
+  return this.http.get<Iproduct>(`${environment.baseurl}/products/${id}`)
 }
 
    getall(): Observable<Iproduct[]> {
@@ -38,6 +39,5 @@ getOneProduct(id: number | string): Observable<Iproduct> {
 updateProduct(id: number, newProduct: Iproduct):Observable<Iproduct> {
   return this.http.put<Iproduct>(`${environment.baseurl}/products/${id}`,newProduct)
 }
-
-
+  
 }

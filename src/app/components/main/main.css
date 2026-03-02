@@ -1,0 +1,20 @@
+/* global styles.css */
+:root {
+  --bg: #fff;
+  --text: #000;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #212529;
+  --text: #fff;
+  --border: #444;
+}
+
+body, html {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
