@@ -217,6 +217,12 @@
       "name": "nana",
       "password": "111111",
       "role": "user"
+    },
+    {
+      "id": "45cd",
+      "name": "aaa",
+      "password": "111111",
+      "role": "admin"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
