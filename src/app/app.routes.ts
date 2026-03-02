@@ -10,6 +10,7 @@ import { Iproduct } from './models/iproduct';
 import { Dashboard } from './components/dashboard/dashboard';
 import { authorizationGuard } from './juards/authorization-guard';
 import { Contact } from './components/contact/contact';
+import { Signup } from './components/signup/signup';
 
 const productResolver: ResolveFn<Iproduct> = (route) => {
   const service = inject(ProductService);
@@ -35,6 +36,7 @@ export const routes: Routes = [
   ]
 },
 { path: 'login', component: Login },
+{ path: 'signup', component: Signup },
 { path: '**', component: ErrorPage }
 
 ]

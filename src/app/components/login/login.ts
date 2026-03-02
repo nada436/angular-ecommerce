@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IsLogin } from '../../services/is-login';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,RouterLink],
 templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -21,7 +21,6 @@ export class Login {
         Validators.minLength(3),
         Validators.pattern(/^[a-zA-Z0-9]+$/),
       ]),
-      role: new FormControl('', Validators.required),
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
@@ -35,8 +34,13 @@ export class Login {
       return;
     }
 
-    const userData = this.userregisterform.value;  
-    this.IsLogin.register(userData);
-    this.router.navigate(['/home']);
+    const { name, password } = this.userregisterform.value;
+    this.IsLogin.login({ name, password }).subscribe(user => {
+      if (user) {
+        this.router.navigate(['/home']);
+      } else {
+        alert('Invalid username or password');
+      }
+    });
   }
 }

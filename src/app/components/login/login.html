@@ -51,25 +51,11 @@
       </div>
 
 
-      <!-- Role -->
-      <div class="mb-4">
-        <label for="role" class="form-label">Role</label>
-        <select class="form-select" id="role" formControlName="role">
-          <option value="" disabled selected>Select your role</option>
-          <option value="user"> User</option>
-          <option value="admin"> Admin</option>
-        </select>
-        <div>
-            @if (userregisterform.get('role')?.invalid && userregisterform.get('role')?.touched) {
-             @if (userregisterform.get('role')?.errors?.['required']) {
-                <p class="text-danger">Role is required  </p>
-             }
-            }      
-        </div>
-      </div>
-
       <button type="submit" class="btn btn-outline-dark w-100" [disabled]="userregisterform.invalid" >Sign In →</button>
     </form>
-    
+    <div class="mt-3 text-center">
+      <span>Don’t have an account?</span>
+      <a [routerLink]="['/signup']" class="text-decoration-none ms-1">Sign up</a>
+    </div>
   </div>
 </div>

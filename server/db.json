@@ -181,5 +181,43 @@
       "thumbnail": "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp"
     }
   ],
+  "users": [
+    {
+      "id": "1",
+      "name": "admin",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "user",
+      "password": "user123",
+      "role": "user"
+    },
+    {
+      "id": "b549",
+      "name": "nada",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "7c44",
+      "name": "nada",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "fd74",
+      "name": "nada1",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "id": "e405",
+      "name": "nana",
+      "password": "111111",
+      "role": "user"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
